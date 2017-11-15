@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <% include ../partials/jumbotron%>  
+    
+<h2>Loop</h2>
+
+<ul class="list-group">
+    <% drinks.forEach(function(drink){%>
+        <li class="list-group-item"> <%= drink.name %> - <span class="badge"> <%= drink.drunkness %> </span> </li>
+    <% }); %>
+</ul>
+
+<% function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+
+    async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      }%>
+
+
+
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
